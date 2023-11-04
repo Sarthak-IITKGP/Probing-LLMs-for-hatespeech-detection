@@ -1,0 +1,264 @@
+﻿Prompts used for probing LLMs
+1. Vanilla prompts
+1.1. Hatexplain
+Classify the post delimited by three backticks as normal, offensive or hatespeech. Provide the answer as either normal, offensive or hatespeech only.
+Example output for offensive : offensive
+Example output for hatespeech : hatespeech
+Example output for normal : normal
+``` post``` 
+1.2. Implicit Hate
+Classify the post delimited by three backticks as explicit_hate, implicit_hate or not_hate. Provide the answer as either explicit_hate, implicit_hate or not_hate only. 
+Example Output for implicit_hate : implicit_hate 
+Example Output for explicit_hate : explicit_hate 
+Example Output for not_hate : not_hate
+\`\`\` post\`\`\`
+1.3. Toxic span
+\paragraph{Classify the post delimited by three backticks as Toxic or Non\_Toxic.  Provide answer as either Toxic or Non\_Toxic only. Example output for Toxic: Toxic  Example output for Non\_Toxic : Non\_Toxic
+\`\`\`\ post\`\`\`\ }
+2. Vanilla + definition
+2.1. Hatexplain
+\paragraph{Consider the following definitions.
+1. hatespeech: any speech or text that attacks a person or group on the basis of attributes such as race, religion, ethnic origin, national origin, gender, disability, sexual orientation, or gender identity.
+    2. offensive:  the text or speech which uses abusive slurs or derogatory terms but may not be hatespeech.
+    3. normal: the text which is neither offensive or hatespeech and adheres to social norms.
+     Based on this classify the post delimited by three backticks as normal, offensive or hatespeech. Provide the answer as either normal, offensive or hatespeech only.
+Example output for offensive : offensive
+Example output for hatespeech : hatespeech
+Example output for normal : normal
+ \`\`\`\ post\`\`\`\
+}
+\subsubsection{Implicit Hate}
+\paragraph{Consider the following definitions.
+ 1. implicit\_hate : Implicit hate speech is defined by coded or indirect language that disparages a person or group on the basis of protected characteristics like race, gender, and cultural identity.
+    2. explicit\_hate : Explicit hate refers to openly expressed, direct forms of hatred and prejudice towards individuals or groups based on their characteristics.
+    3. not\_hate : Not hate refers to speech or actions that do not involve any form of hatred, prejudice, or discrimination towards individuals or groups based on their characteristics.Based on this classify the post delimited by three backticks as explicit\_hate, implicit\_hate or not\_hate. Provide the answer as either explicit\_hate, implicit\_hate or not\_hate only.
+    Example Output for implicit\_hate : implicit\_hate
+    Example Output for explicit\_hate : explicit\_hate
+    Example Output for not\_hate : not\_hate ``` post```
+    }
+
+
+
+
+\subsubsection{Toxic span}
+\paragraph{ Consider the following definitions
+1. Toxic : In social media and online forum, toxic content can be defined as rude, disrespectful, or unreasonable posts that would make users want to leave the conversation.
+2. Non\_Toxic : The speech or text that is not toxic and is fit for use in conversation is called Non\_Toxic.
+Based on this classify the post delimited by three backticks as Toxic or Non\_Toxic.  Provide answer as either Toxic or Non\_Toxic only. Example output for Toxic: Toxic    Example output for Non\_Toxic : Non\_Toxic
+\n \`\`\`\ post\`\`\`\
+}
+\subsection{Explanation at output}
+\subsubsection{Hatexplain}
+\paragraph{Classify the post delimited by three backticks as normal, offensive or hatespeech and extract the words from the post that you found as hatespeech or offensive.Provide answer in the format : either normal, offensive or hatespeech only followed by the list of extracted words, separated by ". Enclose the list with \<\<\<\>\>\>\ Example output for offensive : offensive <<< "offensive word 1","offensive word 2">>>
+ Example output for hatespeech : hatespeech <<< "hateful word 1","hateful word 2">>>
+ Example output for normal : normal
+ 
+\`\`\`\ post\`\`\`\
+}
+\subsubsection{Implicit Hate}
+\paragraph{Classify the post delimited by three backticks as explicit\_hate, implicit\_hate or not\_hate with an explanation in 15 words.
+    
+    Provide answer in format either explicit\_hate, implicit\_hate or not\_hate followed by the explanation enclosed in <<< >>>.
+ \`\`\`\ post\`\`\`\
+}
+\subsubsection{Toxic span}
+\paragraph{Classify the post delimited by three backticks as Toxic or Non\_Toxic and extract the words from the post that you found as Toxic.
+    
+  Provide answer in the format : either Toxic or Non\_Toxic only followed by the list of extracted words, separated by ". Enclose the list with <<< >>>.
+   
+   Example output for Toxic: Toxic <<< "Toxic word 1","Toxic word 2">>>
+   Example output for Non\_Toxic : Non\_Toxic
+ \`\`\`\ post\`\`\`\
+}
+\subsection{Definition + Explanation at output}
+\subsubsection{Hatexplain}
+\paragraph{Consider the following definitions.
+1. hatespeech: any speech or text that attacks a person or group on the basis of attributes such as race, religion, ethnic origin, national origin, gender, disability, sexual orientation, or gender identity.
+    2. offensive:  the text or speech which uses abusive slurs or derogatory terms but may not be hatespeech.
+    3. normal: the text which is neither offensive or hatespeech and adheres to social norms.
+     Based on this Classify the post delimited by three backticks as normal, offensive or hatespeech and extract the words from the post that you found as hatespeech or offensive
+
+
+
+
+Provide answer in the format : either normal, offensive or hatespeech only.Followed by the list of extracted words, separated by ". Enclose the list with <<<>>>
+ Example output for offensive : offensive <<< "offensive word 1","offensive word 2">>>
+ Example output for hatespeech : hatespeech <<< "hateful word 1","hateful word 2">>>
+ Example output for normal : normal
+\`\`\`\ post\`\`\`\
+}
+\subsubsection{Implicit Hate}
+\paragraph{Consider the following definitions.
+ 1. implicit\_hate : Implicit hate speech is defined by coded or indirect language that disparages a person or group on the basis of protected characteristics like race, gender, and cultural identity.
+    2. explicit\_hate : Explicit hate refers to openly expressed, direct forms of hatred and prejudice towards individuals or groups based on their characteristics.
+    3. not\_hate : Not hate refers to speech or actions that do not involve any form of hatred, prejudice, or discrimination towards individuals or groups based on their characteristics.Based on this classify the post delimited by three backticks as explicit\_hate, implicit\_hate or not\_hate with an explanation in 15 words.
+    
+    Provide answer in format : either explicit\_hate, implicit\_hate or not\_hate followed by the explanation enclosed in <<< >>>.
+    \`\`\`\ post\`\`\`\
+    }
+\subsubsection{Toxic span}
+\paragraph{ Consider the following definitions
+1. Toxic : In social media and online forum, toxic content can be defined as rude, disrespectful, or unreasonable posts that would make users want to leave the conversation.
+2. Non\_Toxic : The speech or text that is not toxic and is fit for use in conversation is called Non\_Toxic.
+Based on this classify the post delimited by three backticks as Toxic or Non\_Toxic and extract the words from the post that you found as Toxic.
+    
+  Provide answer in the format : either Toxic or Non\_Toxic only followed by the list of extracted words, separated by ". Enclose the list with <<< >>>.
+   
+   Example output for Toxic: Toxic <<< "Toxic word 1","Toxic word 2">>>
+   Example output for Non\_Toxic : Non\_Toxic
+   \`\`\`\ post\`\`\`\}
+\subsection{Explanation at input}
+\subsubsection{Hatexplain}
+\paragraph{Classify the post delimited by three backticks as normal, offensive or hatespeech taking into account the {rationales} as an explanation for why a post should be considered as hateful or offensive or none of these two.
+Provide answer as  either normal, offensive or hatespeech only,
+
+
+
+
+Example output for offensive : offensive
+Example output for hatespeech : hatespeech
+Example output for normal : normal
+\`\`\`\ post\`\`\`\
+}
+\subsubsection{Implicit Hate}
+\paragraph{Classify the post delimited by three backticks as explicit_hate, implicit_hate or not_hate taking into account the implied statement {implied statement} as an explanation for why a post should be considered as implicitly hateful, explicitly hateful or none of these.
+Provide answer as either explicit_hate, implicit_hate or not_hate only
+   
+ Example Output for implicit_hate : implicit_hate
+    Example Output for explicit_hate : explicit_hate
+    Example Output for not_hate : not_hate 
+\`\`\`\ post\`\`\`\
+}
+\subsubsection{Toxic span}
+\paragraph{Classify the post delimited by three backticks as Toxic or Non_Toxic, considering the span
+{Span} as an explanation for why a post should be considered as toxic or not.
+ Provide answer as either Toxic or Non_Toxic only.
+ Example output for Toxic: Toxic 
+ Example output for Non_Toxic : Non_Toxic
+    \`\`\`\ post\`\`\`\
+}
+\subsection{Definition + Explanation at input}
+\subsubsection{Hatexplain}
+\paragraph{Consider the following definitions.
+1. hatespeech: any speech or text that attacks a person or group on the basis of attributes such as race, religion, ethnic origin, national origin, gender, disability, sexual orientation, or gender identity.
+    2. offensive:  the text or speech which uses abusive slurs or derogatory terms but may not be hatespeech.
+    3. normal: the text which is neither offensive or hatespeech and adheres to social norms.
+     Based on this classify the post delimited by three backticks as normal, offensive or hatespeech taking into account the {rationales} as an explanation for why a post should be considered as hateful or offensive or none of these two.
+Provide answer as  either normal, offensive or hatespeech only,
+
+
+
+
+Example output for offensive : offensive
+Example output for hatespeech : hatespeech
+Example output for normal : normal
+ \`\`\`\ post\`\`\`\ }
+\subsubsection{Implicit Hate}
+\paragraph{Consider the following definitions.
+ 1. implicit\_hate : Implicit hate speech is defined by coded or indirect language that disparages a person or group on the basis of protected characteristics like race, gender, and cultural identity.
+    2. explicit\_hate : Explicit hate refers to openly expressed, direct forms of hatred and prejudice towards individuals or groups based on their characteristics.
+    3. not\_hate : Not hate refers to speech or actions that do not involve any form of hatred, prejudice, or discrimination towards individuals or groups based on their characteristics.Based on this classify the post delimited by three backticks as explicit_hate, implicit_hate or not_hate taking into account the implied statement {implied statement} as an explanation for why a post should be considered as implicitly hateful, explicitly hateful or none of these.
+Provide answer as either explicit_hate, implicit_hate or not_hate only
+   
+ Example Output for implicit_hate : implicit_hate
+    Example Output for explicit_hate : explicit_hate
+    Example Output for not_hate : not_hate 
+\`\`\`\ post\`\`\`\ }
+\subsubsection{Toxic span}
+\paragraph{ Consider the following definitions
+1. Toxic : In social media and online forum, toxic content can be defined as rude, disrespectful, or unreasonable posts that would make users want to leave the conversation.
+2. Non\_Toxic : The speech or text that is not toxic and is fit for use in conversation is called Non\_Toxic.
+Based on this Classify the post delimited by three backticks as Toxic or Non_Toxic, considering the span
+{Span} as an explanation for why a post should be considered as toxic or not.
+ Provide answer as either Toxic or Non_Toxic only.
+ Example output for Toxic: Toxic 
+ Example output for Non_Toxic : Non_Toxic
+    \`\`\`\ post\`\`\`\ }
+\subsection{Target at output}
+\subsubsection{Hatexplain}
+\paragraph{Classify the post delimited by three backticks as normal, offensive or hatespeech and also mention which group of people does it target.
+    Provide answer in the format : either normal, offensive or hatespeech only followed by the list of targeted groups enclosed in <<<>>>.
+    Example output for offensive : offensive <<<"targeted_group 1", "targeted_group 2">>>
+    Example output for hatespeech : hatespeech <<<"targeted_group 1", "targeted_group 2">>>
+    Example output for normal : normal
+   \`\`\`\ post\`\`\`\
+}
+\subsubsection{Implicit Hate}
+\paragraph{classify the post delimited by three backticks as explicit_hate, implicit_hate or not_hate and also mention which group of people does it target.
+    
+    Provide answer in the format : Either explicit_hate, implicit_hate or not_hate followed by the list targeted groups enclosed in <<<>>>.
+    Example Output for implicit_hate : implicit_hate <<<"targeted_group 1", "targeted_group 2">>>
+    Example Output for explicit_hate : explicit_hate <<<"targeted_group 1", "targeted_group 2">>>
+    Example Output for not_hate : not_hate 
+    \`\`\`\ post\`\`\`\
+}
+\subsubsection{Toxic span}
+\paragraph{Classify the post delimited by three backticks as Toxic or Non_Toxic and mention which group of people does it target.
+    
+    Provide answer in the format : either Toxic or Non_Toxic only.Followed by the list of extracted words, separated by ". Enclose the list with <<<>>>
+    Example output for Toxic: Toxic <<< "targeted_group 1","targeted_group 2">>>
+    Example output for Non_Toxic : Non_Toxic
+   \`\`\`\ post\`\`\`\
+}
+\subsection{Definition + Target at output}
+\subsubsection{Hatexplain}
+\paragraph{Consider the following definitions.
+1. hatespeech: any speech or text that attacks a person or group on the basis of attributes such as race, religion, ethnic origin, national origin, gender, disability, sexual orientation, or gender identity.
+    2. offensive:  the text or speech which uses abusive slurs or derogatory terms but may not be hatespeech.
+    3. normal: the text which is neither offensive or hatespeech and adheres to social norms.
+     Based on this classify the post delimited by three backticks as normal, offensive or hatespeech and also mention which group of people does it target.
+    Provide answer in the format : either normal, offensive or hatespeech only followed by the list of targeted groups enclosed in <<<>>>.
+    Example output for offensive : offensive <<<"targeted_group 1", "targeted_group 2">>>
+    Example output for hatespeech : hatespeech <<<"targeted_group 1", "targeted_group 2">>>
+    Example output for normal : normal
+    \`\`\`\ post\`\`\`\ }
+\subsubsection{Implicit Hate}
+\paragraph{Consider the following definitions.
+ 1. implicit\_hate : Implicit hate speech is defined by coded or indirect language that disparages a person or group on the basis of protected characteristics like race, gender, and cultural identity.
+    2. explicit\_hate : Explicit hate refers to openly expressed, direct forms of hatred and prejudice towards individuals or groups based on their characteristics.
+    3. not\_hate : Not hate refers to speech or actions that do not involve any form of hatred, prejudice, or discrimination towards individuals or groups based on their characteristics.Based on this classify the post delimited by three backticks as explicit_hate, implicit_hate or not_hate and also mention which group of people does it target.
+    
+    Provide answer in the format : Either explicit_hate, implicit_hate or not_hate followed by the list targeted groups enclosed in <<<>>>.
+    Example Output for implicit_hate : implicit_hate <<<"targeted_group 1", "targeted_group 2">>>
+    Example Output for explicit_hate : explicit_hate <<<"targeted_group 1", "targeted_group 2">>>
+    Example Output for not_hate : not_hate 
+    \`\`\`\ post\`\`\`\ }
+\subsubsection{Toxic span}
+\paragraph{ Consider the following definitions
+1. Toxic : In social media and online forum, toxic content can be defined as rude, disrespectful, or unreasonable posts that would make users want to leave the conversation.
+2. Non\_Toxic : The speech or text that is not toxic and is fit for use in conversation is called Non\_Toxic.
+Based on this classify the post delimited by three backticks as Toxic or Non_Toxic and mention which group of people does it target.
+    
+    Provide answer in the format : either Toxic or Non_Toxic only.Followed by the list of extracted words, separated by ". Enclose the list with <<<>>>
+    Example output for Toxic: Toxic <<< "targeted_group 1","targeted_group 2">>>
+    Example output for Non_Toxic : Non_Toxic
+    \`\`\`\ post\`\`\`\ }
+\subsection{Definition + Target at input}
+\subsubsection{Hatexplain}
+\paragraph{Consider the following definitions.
+1. hatespeech: any speech or text that attacks a person or group on the basis of attributes such as race, religion, ethnic origin, national origin, gender, disability, sexual orientation, or gender identity.
+    2. offensive:  the text or speech which uses abusive slurs or derogatory terms but may not be hatespeech.
+    3. normal: the text which is neither offensive or hatespeech and adheres to social norms.
+     Based on this classify the post delimited by three backticks as normal, offensive or hatespeech with respect to the victim community {targets} 
+Provide answer as  either normal, offensive or hatespeech only,
+
+
+
+
+Example output for offensive : offensive
+Example output for hatespeech : hatespeech
+Example output for normal : normal
+\`\`\`\ post\`\`\`\
+}
+\subsubsection{Implicit Hate}
+\paragraph{Consider the following definitions.
+ 1. implicit\_hate : Implicit hate speech is defined by coded or indirect language that disparages a person or group on the basis of protected characteristics like race, gender, and cultural identity.
+    2. explicit\_hate : Explicit hate refers to openly expressed, direct forms of hatred and prejudice towards individuals or groups based on their characteristics.
+    3. not\_hate : Not hate refers to speech or actions that do not involve any form of hatred, prejudice, or discrimination towards individuals or groups based on their characteristics.Based on this classify the post delimited by three backticks as explicit_hate, implicit_hate or not_hate with respect to the victim community {target}.
+Provide answer as either explicit_hate, implicit_hate or not_hate only.
+  
+Example Output for implicit_hate : implicit_hate
+Example Output for explicit_hate : explicit_hate
+Example Output for not_hate : not_hate 
+\`\`\`\ post\`\`\`\
+}
