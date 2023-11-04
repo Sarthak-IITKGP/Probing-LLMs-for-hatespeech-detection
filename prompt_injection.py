@@ -37,7 +37,7 @@ def get_completion(prompt, model="text-davinci-002"):#put model="gpt-3.5-turbo" 
 
 """**importing dataset**"""
 
-file_path = 'chatgpt_Conan_Expout.tsv'
+file_path = 'chatgpt_Conan_Expout.tsv'#path to dataset
 df =pd.read_csv(file_path,delimiter='\t')
 
 df['prediction']=""
