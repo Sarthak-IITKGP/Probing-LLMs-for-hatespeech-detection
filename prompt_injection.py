@@ -24,7 +24,7 @@ import openai
 import pandas as pd
 import time
 
-def get_completion(prompt, model="text-davinci-002"):
+def get_completion(prompt, model="text-davinci-002"):#put model="gpt-3.5-turbo" for gpt-3.5
     messages = [{"role": "user", "content": prompt}]
     response = openai.ChatCompletion.create(
         engine=deployment_name,
